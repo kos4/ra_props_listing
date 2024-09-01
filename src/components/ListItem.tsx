@@ -2,13 +2,6 @@ import React from "react";
 import {ListType} from "../types/ListType.ts";
 
 export default function ListItem({item}: {item: ListType}) {
-  let image;
-  if (item.MainImage) {
-    image = <img src={item.MainImage['url_170x135']} alt={item.title}/>;
-  } else {
-    return false;
-  }
-
   const title = item.title.length > 50 ? item.title.slice(0, 50) + '...' : item.title;
   let price = item.price;
 
@@ -33,19 +26,17 @@ export default function ListItem({item}: {item: ListType}) {
   }
 
   return (
-    <>
-      <div className="item">
-        <div className="item-image">
-          <a href={item.url}>
-            {image}
-          </a>
-        </div>
-        <div className="item-details">
-          <p className="item-title">{title}</p>
-          <p className="item-price">{price}</p>
-          <p className={classQuantity}>{item.quantity} left</p>
-        </div>
+    <div className="item">
+      <div className="item-image">
+        <a href={item.url}>
+          <img src={item.MainImage['url_570xN']} alt={item.title}/>
+        </a>
       </div>
-    </>
+      <div className="item-details">
+      <p className="item-title">{title}</p>
+        <p className="item-price">{price}</p>
+        <p className={classQuantity}>{item.quantity} left</p>
+      </div>
+    </div>
   )
 }

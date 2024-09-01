@@ -2123,14 +2123,6 @@
     }
   },
   {
-    "listing_id": 638003203,
-    "state": "removed",
-    "sku": [],
-    "error_messages": [
-      "Access denied on association MainImage"
-    ]
-  },
-  {
     "listing_id": 656758345,
     "state": "active",
     "user_id": 54669578,
